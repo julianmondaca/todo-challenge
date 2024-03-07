@@ -2,6 +2,9 @@
 
 El propósito de esta prueba es conocer tu capacidad para crear una pequeña aplicación funcional en un límite de tiempo. A continuación, encontrarás las funciones, los requisitos y los puntos clave que debés tener en cuenta durante el desarrollo.
 
+## LAS INSTRUCCIONES PARA LEVANTAR EL PROYECTO Y UTILIZARLO SE ENCUENTRAN EN EL SIGUIENTE ENLACE:
+- https://docs.google.com/document/d/1x2YIS1EECg8ashY02_KBpPUBDeulCC3baC5uBgbjyYg/edit?usp=sharing
+
 ## Qué queremos que hagas:
 
 - El Challenge consiste en crear una aplicación web sencilla que permita a los usuarios crear y mantener una lista de tareas.

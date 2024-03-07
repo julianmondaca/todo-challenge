@@ -16,8 +16,8 @@ class NoteService:
     def update_note(self, note_id, content, status_id):
         try:
             note_repository = NoteRepository()
-            note = note_repository.update_note(note_id, content, status_id)
-            return note
+            note_repository.update_note(note_id, content, status_id)
+            return
         except Exception as e:
             print("ocurrio un error al intentar actualizar una nota. Error: ", e)
             raise e
@@ -25,8 +25,8 @@ class NoteService:
     def delete_note(self, note_id):
         try:
             note_repository = NoteRepository()
-            note = note_repository.delete_note(note_id)
-            return note
+            note_repository.delete_note(note_id)
+            return
         except Exception as e:
             print("ocurrio un error al intentar borrar una nota. Error: ", e)
             raise e

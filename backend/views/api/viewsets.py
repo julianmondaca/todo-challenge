@@ -1,6 +1,7 @@
 from django.utils.dateparse import parse_datetime
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import action
 from rest_framework import viewsets
 from django_filters import FilterSet, CharFilter
 from django_filters import rest_framework as filters
@@ -22,6 +23,7 @@ class NoteViewSet(viewsets.ModelViewSet):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
+    @action(detail=False, methods=['get'])
     def get_queryset(self):
         queryset = super().get_queryset()
         date_str = self.request.query_params.get('date', None)

@@ -1,13 +1,16 @@
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import permission_classes
 from rest_framework.permissions import IsAuthenticated
 from django.views.decorators.http import require_http_methods
 from backend.services.note_service import NoteService
 
 @csrf_exempt
-@require_http_methods(["POST", "PUT"])
+@api_view(['POST', 'PUT'])
+@authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def create_or_update_note(request):
         data = json.loads(request.body.decode('utf-8'))
@@ -37,7 +40,8 @@ def create_or_update_note(request):
         
             
 @csrf_exempt
-@require_http_methods(["DELETE"])
+@api_view(['DELETE'])
+@authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def delete_note(request, note_id):
      if not note_id:
